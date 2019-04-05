@@ -17,26 +17,19 @@ const breakpoints = {
 const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
 let month = monthNames[d.getMonth()].toLowerCase();
 let date = d.getDate();
-let matchNo =1;
-if (d.getHours() >=20){
-    matchNo = 2;
-}
 if (d.getHours() <1){
     date--;
-    matchNo = 2;
 }
 if (date<10){
     date='0'+date;
 }
-date = '04';
-month = 'april'
-matchNo = 1;
 class App extends React.Component {
   constructor(){
     super();
     this.load = this.load.bind(this);
     this.quality = React.createRef();
     this.language = React.createRef();
+    this.matchNo = React.createRef();
     this.getItems = this.getItems.bind(this);
     this.state = {
       url: '',
@@ -72,7 +65,7 @@ class App extends React.Component {
       e.preventDefault();
     this.setState((state) => ({
         prevUrl: state.url,
-        url: baseUrl[this.language.current.value]+matchNo + date + month + "2019/master_"+this.quality.current.value+".m3u8",
+        url: baseUrl[this.language.current.value]+this.matchNo.current.value + date + month + "2019/master_"+this.quality.current.value+".m3u8",
     }));
   }
   render() {
@@ -84,6 +77,11 @@ class App extends React.Component {
                 <select className={'select-css'} name="language" ref={this.language} defaultValue='eng'>
                   <option value='eng'>English</option>
                   <option value='hin'>Hindi</option>
+                </select>
+                <label className='label'>Select Match</label>
+                <select className={'select-css'} name="matchNo" ref={this.matchNo} defaultValue='1'>
+                  <option value='1'>First Match of the day</option>
+                  <option value='2'>Second Match of the day</option>
                 </select>
               <label className={'label'}>Select Quality</label>
               <select className={'select-css'} name="quality" ref={this.quality} defaultValue='1'>
