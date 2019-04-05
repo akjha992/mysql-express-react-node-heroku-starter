@@ -1,7 +1,5 @@
 import React from "react";
 import ReactHLS from 'react-hls';
-import desktop from './desktop.css';
-import phone from './phone.css';
 import MQ from 'react-responsive';
 import axios from 'axios';
 const baseUrl = {
@@ -98,24 +96,29 @@ class App extends React.Component {
           </div>
         </MQ>
         <MQ query={breakpoints.phone}>
-          <div className={phone.mainBody}>
-            <ReactHLS width={window.innerWidth} height={200} url={this.state.url} autoplay/>
+        <div className={'player-phone'}>
+        <ReactHLS width={window.innerWidth} height={200} url={this.state.url} autoplay/>
           </div>
-          <div className={phone.sideBar}>
-          <label className={phone.label}>Select Language</label>
-                <select className={desktop['select-css']} name="language" ref={this.language} defaultValue='eng'>
+          <div className='selector-phone'>
+          <label className='label'>Select Language</label>
+                <select className={'select-css'} name="language" ref={this.language} defaultValue='eng'>
                   <option value='eng'>English</option>
                   <option value='hin'>Hindi</option>
                 </select>
-              <label className={phone.label}>Select Quality</label>
-              <select className={phone['select-css']} name="quality" ref={this.quality} defaultValue='1'>
+                <label className='label'>Select Match</label>
+                <select className={'select-css'} name="matchNo" ref={this.matchNo} defaultValue='1'>
+                  <option value='1'>First Match of the day</option>
+                  <option value='2'>Second Match of the day</option>
+                </select>
+              <label className={'label'}>Select Quality</label>
+              <select className={'select-css'} name="quality" ref={this.quality} defaultValue='1'>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
                 <option value='5'>5</option>
               </select>
-              <button className={phone.button} onClick={this.load}>LOAD</button>
+              <button className={'button'} onClick={this.load}>LOAD</button>
           </div>
         </MQ>
       </div>
