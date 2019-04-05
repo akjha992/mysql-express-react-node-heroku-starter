@@ -5,7 +5,9 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.15.3",
-    "password-generator": "^2.1.0"
+    "express-pino-logger": "^4.0.0",
+    "password-generator": "^2.1.0",
+    "request": "^2.88.0"
   },
   "scripts": {
     "start": "node index.js",
