@@ -98,7 +98,7 @@ class App extends React.Component {
         </MQ>
         <MQ query={breakpoints.phone}>
         <div className={'player-phone'}>
-        <ReactHLS width={window.innerWidth} height={(window.innerWidth*600)/800} url={this.state.url} autoplay/>
+        <ReactHLS width={window.innerWidth} height={(window.innerWidth*600)/800} url={'/watch.m3u8'} autoplay/>
           </div>
           <div className='selector-phone'>
           <label className='label'>Select Language</label>
