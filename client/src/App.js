@@ -35,6 +35,7 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
+    console.log(window.innerWidth, window.innerWidth*600/800);
     this.timer = setInterval(()=> this.getItems(), 5000);
   }
   
@@ -97,7 +98,7 @@ class App extends React.Component {
         </MQ>
         <MQ query={breakpoints.phone}>
         <div className={'player-phone'}>
-        <ReactHLS width={window.innerWidth} height={200} url={this.state.url} autoplay/>
+        <ReactHLS width={window.innerWidth} height={(window.innerWidth*600)/800} url={this.state.url} autoplay/>
           </div>
           <div className='selector-phone'>
           <label className='label'>Select Language</label>
