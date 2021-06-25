@@ -9,5 +9,5 @@ git clone https://github.com/akjha992/mysql-express-react-node-heroku-starter.gi
 ```
 git remote rm origin
 git remote add origin https://github.com/akjha992/<reponame>.git
-git push
+git push --set-upstream origin master
 ```
