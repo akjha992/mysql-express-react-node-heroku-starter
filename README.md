@@ -5,10 +5,9 @@
 git clone https://github.com/akjha992/mysql-express-react-node-heroku-starter.git
 ```
 
-## Create new project in a new repository
-
+## Push the codebase in to your new project repository
 ```
+git remote rm origin
 git remote add origin https://github.com/akjha992/<reponame>.git
-git add .
-git commit -m "new project"
-git push```
+git push
+```
