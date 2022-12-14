@@ -6,7 +6,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.18.3",
-    "express": "^4.15.3",
+    "express": "^4.17.3",
     "express-pino-logger": "^4.0.0",
     "mysql": "^2.18.1",
     "password-generator": "^2.1.0",
